@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
 	    turn--;
 	}
 	counter1.animate().translationYBy(1000f).setDuration(30);
-
+	int i = 9;
     }
 
    // public boolean checkWinner(){
