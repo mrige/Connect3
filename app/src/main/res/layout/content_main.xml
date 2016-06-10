@@ -13,6 +13,7 @@
     tools:showIn="@layout/activity_main">
 
     <GridLayout
+	android:id="@+id/grid"
 	android:layout_width="match_parent"
 	android:layout_height="360dp"
 	android:layout_centerHorizontal="true"
@@ -104,6 +105,7 @@
 	android:layout_height="wrap_content"
 	android:layout_centerHorizontal="true"
 	android:layout_centerVertical="true"
+	android:alpha="0.5"
 	android:background="#000000"
 	android:orientation="vertical"
 	android:padding="15dp"
@@ -124,7 +126,8 @@
 	    android:layout_width="wrap_content"
 	    android:layout_height="wrap_content"
 	    android:layout_gravity="center_horizontal"
-	    android:onClick="setContentView"
+	    android:alpha="1"
+	    android:onClick="playAgain"
 	    android:text="Play Again" />
     </LinearLayout>
 </RelativeLayout>
