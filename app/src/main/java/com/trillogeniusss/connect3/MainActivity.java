@@ -18,7 +18,8 @@ public class MainActivity extends Activity {
     int turn = 0;// 0 is for player 1 and 1 is for player 2
     int [] board = {-1,-1,-1,-1,-1,-1,-1,-1,-1};//keeps track of the used position on the grid, set to a default of -1
     int [][] winningPos = {{0,1,2},{3,4,5},{6,7,8},{0,3,6},{1,4,7},{2,5,8},{0,4,8},{2,4,6}};// array of possible winning positions on the grid
-    boolean isActive = true;// checks if the bors is still active
+    boolean isActive = true;// checks if the boris still active
+    int plays = 0;//checks how many moves have been made by the players
 
     public void taptap(View view){
 	ImageView counter1 = (ImageView)view;
@@ -77,6 +78,15 @@ public class MainActivity extends Activity {
 		count = 0;
 	    }
 	}
+	plays++;
+	if(plays==9){
+	    LinearLayout winnerMsg = (LinearLayout)findViewById(R.id.playagainlayout);
+	    TextView winnerText = (TextView)findViewById(R.id.winnerstext);
+	    winnerText.setText("Its A Tie");
+	    winnerMsg.setVisibility(View.VISIBLE);
+	    winner = false;
+	    isActive = false;
+	}
 	return winner;
     }
 
@@ -86,7 +96,7 @@ public class MainActivity extends Activity {
 	winnerMsg.setVisibility(View.INVISIBLE);
 	turn = 0;
 	isActive = true;
-
+	plays = 0;
 	for(int j =0 ; j<board.length; j++) {
 	    board[j] = -1;
 	}
